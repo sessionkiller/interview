@@ -1,0 +1,33 @@
+.container {
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+.suggestions {
+  position: absolute;
+  left: 0;
+  top: 100%;
+  background-color: aquamarine;
+  list-style-type: none;
+  max-height: 400px;
+  overflow-y: auto;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.suggestions li {
+  padding: 0.2rem;
+  cursor: pointer;
+}
+
+.clear {
+  position: absolute;
+  left: calc(100% + 5px);
+  color: red;
+  font-size: 0.8rem;
+  font-weight: bold;
+  cursor: pointer;
+}

@@ -1,0 +1,30 @@
+{
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "test:ui-jest": "jest --config=\"./jest.config.js\" --testPathPattern=\".*ui-jest\\.spec\\..*\" --testEnvironment=\"jsdom\"",
+    "test:unit": "jest --config=\"./jest.config.js\" --testPathPattern=\".*unit\\.spec\\..*\" --env=node",
+    "test:ci": "jest --ci"
+  },
+  "dependencies": {
+    "bootstrap": "^5.3.1",
+    "next": "latest",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0",
+    "react-paginate": "^8.2.0"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "5.16.4",
+    "@testing-library/react": "13.2.0",
+    "@testing-library/user-event": "14.2.0",
+    "@types/react": "18.0.9",
+    "@types/testing-library__jest-dom": "5.14.5",
+    "eslint": "^8.33.0",
+    "jest": "28.1.0",
+    "jest-environment-jsdom": "28.1.0",
+    "typescript": "4.6.4"
+  }
+}

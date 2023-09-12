@@ -1,0 +1,39 @@
+.container {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.container tbody tr {
+  cursor: pointer;
+}
+
+.container tbody tr:hover {
+  background-color: #efefef;
+}
+
+.container thead {
+  position: sticky;
+  top: 0;
+  background-color: #91b2e7;
+}
+
+.container thead tr th {
+  text-align: center;
+}
+
+.container tbody tr td {
+  padding: 0.5rem;
+}
+
+@media (max-width: 400px) {
+  .hideMobile {
+    display: none;
+  }
+
+  .shortValue {
+    white-space: nowrap;
+    max-width: 100px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+}

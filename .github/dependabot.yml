@@ -1,0 +1,7 @@
+updates:
+  - package-ecosystem: "npm" #usado en npm y yarn
+    directory: "/"
+    schedule:
+      interval: "weekly"
+
+      # Read more in : https://docs.github.com/en/code-security/dependabot
