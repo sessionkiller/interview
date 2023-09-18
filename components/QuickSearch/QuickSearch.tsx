@@ -15,7 +15,7 @@ function QuickSearch({}: Props) {
   const [open, setOpen] = useState(false);
   const [suggestions, setSuggestions] = useState<Character[]>([]);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
     setTerm(e.target.value);
 
     if (_timer) clearTimeout(_timer);
@@ -23,16 +23,12 @@ function QuickSearch({}: Props) {
     _timer = setTimeout(async () => {
       setSuggestions([]);
 
-      if (term) {
-        const { results }: ApiResponse = await fetchApi(
-          `https://rickandmortyapi.com/api/character/?name=${term}`
-        );
+      const { results }: ApiResponse = await fetchApi(
+        `https://rickandmortyapi.com/api/character/?name=${term}`
+      );
 
-        setSuggestions(results);
-        setOpen(true);
-      } else {
-        handleClick("");
-      }
+      setSuggestions(results);
+      setOpen(true);
     }, 200);
   };
 
@@ -51,7 +47,7 @@ function QuickSearch({}: Props) {
     <div className={styles.container}>
       <input
         className={styles.input}
-        placeholder="Search ..."
+        placeholder="Search"
         type="text"
         value={term}
         onChange={handleChange}

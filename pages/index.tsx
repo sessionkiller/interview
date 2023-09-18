@@ -16,6 +16,7 @@ import { fetchApi } from "utils/fetchApi";
 
 export default function Home({
   data,
+  page,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
   const router = useRouter();
 
@@ -84,5 +85,5 @@ export const getServerSideProps = async ({ query }: { query: QueryParams }) => {
   const data: ApiResponse = await fetchApi(
     `https://rickandmortyapi.com/api/character/?page=${page}&name=${name}`
   );
-  return { props: { data } };
+  return { props: { data, page } };
 };
